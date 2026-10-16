@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ptanmay331-creator.github.io/sarkaritools-image-suite/sitemap.xml
+Sitemap: https://ptanmay331-creator.github.io/sarkaritools-image-suite/sitemap.txt

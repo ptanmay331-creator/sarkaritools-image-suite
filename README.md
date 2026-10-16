@@ -32,8 +32,8 @@ The app enforces per-image and PDF-batch limits to reduce browser memory pressur
 ## Search visibility (free)
 
 1. Once the public site is live, create a free Google Search Console property. For a GitHub Pages address, use the **URL-prefix** property and verify ownership using one of Google's offered methods.
-2. The repository includes a `sitemap.xml` listing the main page and the three guides, plus a sitemap reference in `robots.txt`. If you change the published site URL or add/remove pages, update both files and deploy the change.
-3. Submit `https://ptanmay331-creator.github.io/sarkaritools-image-suite/sitemap.xml` under **Search Console → Sitemaps**.
+2. The repository includes both an XML sitemap (`sitemap.xml`) and a plain-text URL list (`sitemap.txt`), plus references to both in `robots.txt`. If you change the published site URL or add/remove pages, update these files and deploy the change.
+3. Submit `https://ptanmay331-creator.github.io/sarkaritools-image-suite/sitemap.xml` under **Search Console → Sitemaps**. If Search Console reports that the XML sitemap cannot be read, remove that failed entry and submit `https://ptanmay331-creator.github.io/sarkaritools-image-suite/sitemap.txt` instead.
 4. Use Search Console's **Performance** report to monitor queries, impressions, clicks, and indexing. Indexing and ranking take time and are not guaranteed.
 5. Keep the guides helpful and accurate: explain the steps and limitations, link users to the issuing authority's current notice, and do not publish duplicate pages just to target keyword variations.
 
