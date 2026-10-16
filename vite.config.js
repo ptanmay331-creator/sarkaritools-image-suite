@@ -6,6 +6,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        sscPhotoResizer: 'ssc-photo-resizer.html',
         passportPhoto: 'passport-photo.html',
         signatureResizer: 'signature-resizer.html',
         imageToPdf: 'image-to-pdf.html'

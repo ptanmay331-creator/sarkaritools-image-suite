@@ -1,0 +1,17 @@
+{
+  "name": "SarkariTools Resizer",
+  "short_name": "SarkariTools",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#f8fafc",
+  "background_color": "#f8fafc",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

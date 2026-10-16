@@ -3,9 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resize, convert, and prepare application photos and signatures locally in your browser.">
+  <meta name="description" content="Resize photos to 20–50KB and signatures to 10–20KB for SSC, UPSC, IBPS, RRB, NEET and other forms. Free, private, client-side processing—your images stay in your browser.">
   <meta name="theme-color" content="#f8fafc">
-  <title>SarkariTools — Private & Instant Image Suite</title>
+  <title>SarkariTools — 20KB to 50KB Photo & Signature Resizer Online (100% Private)</title>
+  <link rel="canonical" href="https://ptanmay331-creator.github.io/sarkaritools-image-suite/">
+  <meta property="og:title" content="SarkariTools — 20KB to 50KB Photo & Signature Resizer Online (100% Private)">
+  <meta property="og:description" content="Resize photos to 20–50KB and signatures to 10–20KB for SSC, UPSC, IBPS, RRB, NEET and other forms. Free, private, client-side processing—your images stay in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ptanmay331-creator.github.io/sarkaritools-image-suite/">
+  <meta property="og:image" content="https://ptanmay331-creator.github.io/sarkaritools-image-suite/share-preview.svg">
+  <meta property="og:image:alt" content="SarkariTools private online photo and signature resizer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SarkariTools — 20KB to 50KB Photo & Signature Resizer Online (100% Private)">
+  <meta name="twitter:description" content="Resize photos to 20–50KB and signatures to 10–20KB for SSC, UPSC, IBPS, RRB, NEET and other forms. Free, private, client-side processing—your images stay in your browser.">
+  <meta name="twitter:image" content="https://ptanmay331-creator.github.io/sarkaritools-image-suite/share-preview.svg">
+  <meta name="twitter:image:alt" content="SarkariTools private online photo and signature resizer">
+  <link rel="manifest" href="./manifest.json">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I resize a photo to 20KB-50KB for SSC CGL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open the Sarkari Resizer, choose the SSC CGL / CHSL / MTS Photo preset, select your photo, and resize it. The preset fills in 3.5 × 4.5 cm, 300 DPI, and a 20–50 KB file-size range. Check your SSC notification for the current requirements before submitting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to resize a signature between 10KB to 20KB?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Choose the SSC CGL / CHSL / MTS Signature preset in the Sarkari Resizer, select your signature image, and resize it. The preset fills in 4 × 2 cm, 300 DPI, and a 10–20 KB file-size range. You can edit these values to match your application notice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my documents uploaded to any server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Your photos and signatures are processed locally in your browser and are not uploaded to a server."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="/src.css">
 </head>
@@ -61,6 +106,21 @@
       <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
         <div class="flex justify-between items-center mb-3">
           <h3 class="text-sm font-bold text-slate-800">⚙️ Fine-Tune Specs</h3>
+        </div>
+        <div class="mb-4">
+          <label for="exam_preset" class="block text-sm font-semibold text-slate-700 mb-1">⚡ Quick Exam Presets (1-Tap Auto Fill)</label>
+          <select id="exam_preset" class="w-full p-2.5 border border-slate-300 rounded-lg bg-white text-sm text-slate-700 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+            <option value="" selected disabled>Select Exam Preset...</option>
+            <option value="ssc-photo">SSC CGL / CHSL / MTS — Photo (3.5 x 4.5 cm | 20KB - 50KB | 300 DPI)</option>
+            <option value="ssc-signature">SSC CGL / CHSL / MTS — Signature (4.0 x 2.0 cm | 10KB - 20KB | 300 DPI)</option>
+            <option value="upsc-photo">UPSC Civil Services — Photo (350 x 350 px | 20KB - 300KB)</option>
+            <option value="upsc-signature">UPSC Civil Services — Signature (350 x 350 px | 20KB - 300KB)</option>
+            <option value="ibps-photo">IBPS / SBI Bank PO — Photo (4.5 x 3.5 cm | 20KB - 50KB)</option>
+            <option value="ibps-signature">IBPS / SBI Bank PO — Signature (140 x 60 px | 10KB - 20KB)</option>
+            <option value="neet-photo">NTA NEET / JEE — Passport Photo (3.5 x 4.5 cm | 10KB - 200KB)</option>
+            <option value="nta-postcard">NTA Postcard Photo — (4 x 6 inches | 10KB - 200KB)</option>
+            <option value="rrb-photo">Railway RRB — Photo (35 x 45 mm | 20KB - 50KB)</option>
+          </select>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
           <div><label for="tune_width" class="block text-xs font-semibold text-slate-600 mb-1">Width</label><input type="number" id="tune_width" min="0.1" step="0.1" value="3.5" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"></div>
@@ -140,6 +200,19 @@
         <div id="t1_details" class="text-sm text-green-800 font-bold mb-3"></div>
         <img id="t1_preview" alt="Processed image preview" class="max-h-64 mx-auto border border-slate-300 rounded shadow-sm mb-4 object-contain">
         <button id="t1_dl" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-sm transition-colors">Download Final Image</button>
+        <div id="t1_sharePrompt" class="hidden mt-4 rounded-xl border border-emerald-200 bg-white p-4 text-left shadow-sm" aria-live="polite">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">🎉 Saved ₹50 Cyber Cafe Fee?</h3>
+              <p class="mt-1 text-sm text-slate-600">Help a friend filling this form by sharing this tool.</p>
+            </div>
+            <button type="button" class="share-prompt-dismiss shrink-0 rounded-lg p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-800" aria-label="Dismiss sharing prompt">✕</button>
+          </div>
+          <a class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 sm:w-auto" href="https://api.whatsapp.com/send?text=Bro%2C%20if%20you%20are%20filling%20any%20Sarkari%20form%2C%20use%20this%20free%20tool%20to%20resize%20photo%20%26%20signature%20to%20exact%2020KB-50KB%20without%20going%20to%20cyber%20cafe.%20Works%20100%25%20privately%20on%20phone%3A%20https%3A%2F%2Fptanmay331-creator.github.io%2Fsarkaritools-image-suite%2F" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.08 0C5.53 0 .19 5.33.19 11.9c0 2.1.55 4.16 1.6 5.98L.1 24l6.28-1.65a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.9-11.9a11.8 11.8 0 0 0-3.46-8.42ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.24-.38a9.87 9.87 0 0 1-1.52-5.27c0-5.48 4.45-9.93 9.92-9.93a9.87 9.87 0 0 1 7.03 2.92 9.87 9.87 0 0 1 2.9 7.03c0 5.48-4.45 9.93-9.95 9.93Zm5.45-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.71.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>
+            <span>Share on WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -186,6 +259,19 @@
         <div id="t2_details" class="text-sm text-green-800 font-bold mb-3"></div>
         <img id="t2_preview" alt="Resized image preview" class="max-h-64 mx-auto border border-slate-300 rounded shadow-sm mb-4 object-contain">
         <button id="t2_dl" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-sm transition-colors">Download Image</button>
+        <div id="t2_sharePrompt" class="hidden mt-4 rounded-xl border border-emerald-200 bg-white p-4 text-left shadow-sm" aria-live="polite">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">🎉 Saved ₹50 Cyber Cafe Fee?</h3>
+              <p class="mt-1 text-sm text-slate-600">Help a friend filling this form by sharing this tool.</p>
+            </div>
+            <button type="button" class="share-prompt-dismiss shrink-0 rounded-lg p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-800" aria-label="Dismiss sharing prompt">✕</button>
+          </div>
+          <a class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 sm:w-auto" href="https://api.whatsapp.com/send?text=Bro%2C%20if%20you%20are%20filling%20any%20Sarkari%20form%2C%20use%20this%20free%20tool%20to%20resize%20photo%20%26%20signature%20to%20exact%2020KB-50KB%20without%20going%20to%20cyber%20cafe.%20Works%20100%25%20privately%20on%20phone%3A%20https%3A%2F%2Fptanmay331-creator.github.io%2Fsarkaritools-image-suite%2F" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.08 0C5.53 0 .19 5.33.19 11.9c0 2.1.55 4.16 1.6 5.98L.1 24l6.28-1.65a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.9-11.9a11.8 11.8 0 0 0-3.46-8.42ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.24-.38a9.87 9.87 0 0 1-1.52-5.27c0-5.48 4.45-9.93 9.92-9.93a9.87 9.87 0 0 1 7.03 2.92 9.87 9.87 0 0 1 2.9 7.03c0 5.48-4.45 9.93-9.95 9.93Zm5.45-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.71.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>
+            <span>Share on WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -530,6 +616,31 @@
   const t1_btn = document.getElementById('t1_btn');
   let t1_current = null, t1_finalBlob = null, t1_needsDate = false;
 
+  const examPresets = {
+    'ssc-photo': { width: 3.5, height: 4.5, unit: 'cm', minKb: 20, maxKb: 50, dpi: 300 },
+    'ssc-signature': { width: 4, height: 2, unit: 'cm', minKb: 10, maxKb: 20, dpi: 300 },
+    'upsc-photo': { width: 350, height: 350, unit: 'px', minKb: 20, maxKb: 300, dpi: 300 },
+    'upsc-signature': { width: 350, height: 350, unit: 'px', minKb: 20, maxKb: 300, dpi: 300 },
+    'ibps-photo': { width: 4.5, height: 3.5, unit: 'cm', minKb: 20, maxKb: 50, dpi: 300 },
+    'ibps-signature': { width: 140, height: 60, unit: 'px', minKb: 10, maxKb: 20, dpi: 300 },
+    'neet-photo': { width: 3.5, height: 4.5, unit: 'cm', minKb: 10, maxKb: 200, dpi: 300 },
+    'nta-postcard': { width: 10.16, height: 15.24, unit: 'cm', minKb: 10, maxKb: 200, dpi: 300 },
+    'rrb-photo': { width: 35, height: 45, unit: 'mm', minKb: 20, maxKb: 50, dpi: 300 }
+  };
+
+  document.getElementById('exam_preset').addEventListener('change', (event) => {
+    const preset = examPresets[event.target.value];
+    if (!preset) return;
+
+    document.getElementById('tune_width').value = preset.width;
+    document.getElementById('tune_height').value = preset.height;
+    document.getElementById('tune_unit').value = preset.unit;
+    document.getElementById('tune_minKb').value = preset.minKb;
+    document.getElementById('tune_maxKb').value = preset.maxKb;
+    document.getElementById('tune_dpi').value = preset.dpi;
+    updateT1Tag();
+  });
+
   const today = new Date();
   today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
   document.getElementById('t1_candDate').value = today.toISOString().split('T')[0];
@@ -687,7 +798,8 @@
     document.getElementById('t1_details').innerText = `✔ Output: ${kb} KB | ${rangeStatus} | ${targetPxW}×${targetPxH}px at ${dpi} DPI`;
     document.getElementById('t1_out').classList.remove('hidden');
 
-    document.getElementById('t1_dl').onclick = () => downloadBlob(t1_finalBlob, `sarkari_${targetPxW}x${targetPxH}.jpg`);
+    hideSharePrompt('t1_sharePrompt');
+    document.getElementById('t1_dl').onclick = () => downloadAndShowSharePrompt(t1_finalBlob, `sarkari_${targetPxW}x${targetPxH}.jpg`, 't1_sharePrompt');
     });
   }
 
@@ -737,7 +849,8 @@
     setPreview('t2_preview', t2_finalBlob);
     document.getElementById('t2_details').innerText = `✔ Output: ${(blob.size/1024).toFixed(2)} KB (maximum ${targetKb} KB) · ${outputWidth} × ${outputHeight}px`;
     document.getElementById('t2_out').classList.remove('hidden');
-    document.getElementById('t2_dl').onclick = () => downloadBlob(t2_finalBlob, `target_size.jpg`);
+    hideSharePrompt('t2_sharePrompt');
+    document.getElementById('t2_dl').onclick = () => downloadAndShowSharePrompt(t2_finalBlob, `target_size.jpg`, 't2_sharePrompt');
     });
   }
 
@@ -866,10 +979,31 @@
     setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
   }
 
+  function downloadAndShowSharePrompt(blob, filename, promptId) {
+    downloadBlob(blob, filename);
+    document.getElementById(promptId).classList.remove('hidden');
+  }
+
+  function hideSharePrompt(promptId) {
+    document.getElementById(promptId).classList.add('hidden');
+  }
+
+  document.querySelectorAll('.share-prompt-dismiss').forEach(button => {
+    button.addEventListener('click', () => button.closest('[id$="_sharePrompt"]').classList.add('hidden'));
+  });
+
   document.getElementById('t1_btn').addEventListener('click', processSarkari);
   document.getElementById('t2_btn').addEventListener('click', processExactKb);
   document.getElementById('t3_btn').addEventListener('click', processConvert);
   document.getElementById('t4_btn').addEventListener('click', processPdf);
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .catch(error => console.error('Service worker registration failed:', error));
+    });
+  }
 </script>
 
 </body>
