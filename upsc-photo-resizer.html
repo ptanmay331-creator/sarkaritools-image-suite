@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resize and compress photograph (20KB-300KB) and signature (20KB-100KB, 350-500px) for UPSC IAS, NDA, CDS online applications. 100% client-side privacy with edge sharpening.">
+  <meta name="theme-color" content="#f8fafc">
+  <title>UPSC Photo &amp; Signature Resizer Online (20KB - 300KB) — 100% Private | SarkariTools</title>
+  <link rel="canonical" href="https://ptanmay331-creator.github.io/sarkaritools-image-suite/upsc-photo-resizer.html">
+  <meta property="og:title" content="UPSC Photo &amp; Signature Resizer Online — SarkariTools">
+  <meta property="og:description" content="Resize and compress UPSC photos and signatures in your browser. Private client-side processing for IAS, NDA, CDS, and CAPF applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ptanmay331-creator.github.io/sarkaritools-image-suite/upsc-photo-resizer.html">
+  <meta property="og:image" content="https://ptanmay331-creator.github.io/sarkaritools-image-suite/share-preview.svg">
+  <meta property="og:image:alt" content="SarkariTools private online photo and signature resizer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UPSC Photo &amp; Signature Resizer Online — SarkariTools">
+  <meta name="twitter:description" content="Resize and compress UPSC photos and signatures in your browser. Private client-side processing for IAS, NDA, CDS, and CAPF applications.">
+  <meta name="twitter:image" content="https://ptanmay331-creator.github.io/sarkaritools-image-suite/share-preview.svg">
+  <meta name="twitter:image:alt" content="SarkariTools private online photo and signature resizer">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the photo size requirement for UPSC Civil Services / NDA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UPSC requires photograph file size between 20 KB and 200 KB (up to 300 KB max) in JPG/JPEG format."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the UPSC signature dimensions and file size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Signature must be 350 to 500 pixels in dimension, file size between 20 KB and 100 KB in black ink on white paper."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to resize UPSC documents here?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All processing occurs 100% inside your browser using HTML5 Canvas. No image is ever uploaded to any external server."
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/src.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex justify-center p-4 sm:p-8">
+
+<div class="max-w-3xl w-full flex flex-col gap-6">
+  
+  <!-- Header -->
+  <header class="text-center">
+    <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">UPSC Photo &amp; Signature Resizer Online</h1>
+    <p class="text-sm text-slate-500 mt-1">Auto-calibrated for UPSC Online Application Portals (20KB–300KB Photo | 20KB–100KB Signature)</p>
+    <nav class="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-primary-700" aria-label="Exam resizers">
+      <a href="./index.html" class="underline">← Back to SarkariTools Home</a>
+      <a href="./ssc-photo-resizer.html" class="underline">SSC Resizer</a>
+      <a href="./ibps-photo-resizer.html" class="underline">IBPS Resizer</a>
+    </nav>
+    <div class="flex flex-wrap justify-center gap-2 mt-3">
+      <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H9V7a3 3 0 016 0v1h2V7a5 5 0 00-5-5z"></path></svg>
+        Photos Stay on This Device
+      </span>
+      <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">
+        ✨ Optional Edge Sharpening
+      </span>
+    </div>
+  </header>
+
+  <section class="rounded-xl border border-blue-200 bg-blue-50 p-4 sm:p-5" aria-labelledby="upsc-requirements-heading">
+    <h2 id="upsc-requirements-heading" class="text-base font-bold text-slate-900">UPSC photo &amp; signature requirements</h2>
+    <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
+      <li><strong>Photograph:</strong> 20 KB to 200 KB (acceptable up to 300 KB), JPG format, clear frontal face with white background.</li>
+      <li><strong>Signature:</strong> 20 KB to 100 KB, 350 to 500 pixels wide, black ink on white paper. UPSC requires 3 vertical signatures on a single sheet.</li>
+      <li><strong>Live matching:</strong> Use a recent photo; UPSC may match it against a real-time webcam capture.</li>
+    </ul>
+    <p class="mt-3 text-xs text-slate-600">Always verify the latest requirements in the official UPSC notification before submitting.</p>
+    <a href="./index.html" class="mt-3 inline-block text-sm font-semibold text-primary-700 underline">Explore all exam tools &amp; PDF converter</a>
+  </section>
+
+  <!-- Navigation Tabs -->
+  <div class="flex flex-wrap bg-slate-200 p-1 rounded-xl gap-1" role="tablist" aria-label="Image tools">
+    <button id="tab-button-sarkari" role="tab" aria-controls="tab-sarkari" aria-selected="true" class="tab-btn flex-1 text-center py-2.5 px-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 bg-transparent active-tab-btn" data-target="sarkari">📋 Sarkari Resizer</button>
+    <button id="tab-button-kb" role="tab" aria-controls="tab-kb" aria-selected="false" class="tab-btn flex-1 text-center py-2.5 px-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 bg-transparent" data-target="kb">⚖️ Max File Size</button>
+    <button id="tab-button-convert" role="tab" aria-controls="tab-convert" aria-selected="false" class="tab-btn flex-1 text-center py-2.5 px-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 bg-transparent" data-target="convert">🔄 Convert Format</button>
+    <button id="tab-button-pdf" role="tab" aria-controls="tab-pdf" aria-selected="false" class="tab-btn flex-1 text-center py-2.5 px-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 bg-transparent" data-target="pdf">📑 Image to PDF</button>
+  </div>
+
+  <p id="app_status" class="hidden rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert" aria-live="assertive"></p>
+
+  <main id="tool-app" class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+    
+    <!-- ==================== TAB 1: SARKARI RESIZER ==================== -->
+    <div id="tab-sarkari" role="tabpanel" aria-labelledby="tab-button-sarkari" class="tab-content active space-y-5">
+      <div>
+        <label for="t1_instructions" class="block text-sm font-bold text-slate-700 mb-1">Step 1: Paste Notification Guidelines (Or enter manually)</label>
+        <textarea id="t1_instructions" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-shadow" rows="2" placeholder="e.g. Allowed image size: 10 KB to 20 KB in JPEG format. Dimensions: 3.5 cm X 4.5 cm..."></textarea>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="text-xs bg-primary-50 text-primary-700 px-3 py-1 rounded-full font-semibold border border-primary-200 shadow-sm" id="t1_tagSummary">Target: 20–200 KB | 350 × 350 px (300 DPI)</span>
+        <span class="text-xs bg-purple-50 text-purple-700 px-3 py-1 rounded-full font-semibold border border-purple-200 shadow-sm hidden" id="t1_tagDate">Date Stamp Required</span>
+      </div>
+
+      <!-- Specs Grid -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <div class="flex justify-between items-center mb-3">
+          <h3 class="text-sm font-bold text-slate-800">⚙️ Fine-Tune Specs</h3>
+        </div>
+        <div class="mb-4">
+          <span class="mb-2 block text-sm font-semibold text-slate-700">⚡ Quick UPSC Presets</span>
+          <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            <button type="button" class="upsc-preset rounded-lg border border-primary-500 bg-primary-50 px-3 py-2 text-sm font-semibold text-primary-700 hover:border-primary-500 hover:bg-primary-50" data-preset="photo" aria-pressed="true">UPSC Photograph (Preset)</button>
+            <button type="button" class="upsc-preset rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-primary-500 hover:bg-primary-50" data-preset="signature" aria-pressed="false">UPSC Signature (Preset)</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <div><label for="tune_width" class="block text-xs font-semibold text-slate-600 mb-1">Width</label><input type="number" id="tune_width" min="0.1" step="0.1" value="350" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"></div>
+          <div><label for="tune_height" class="block text-xs font-semibold text-slate-600 mb-1">Height</label><input type="number" id="tune_height" min="0.1" step="0.1" value="350" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"></div>
+          <div><label for="tune_unit" class="block text-xs font-semibold text-slate-600 mb-1">Unit</label><select id="tune_unit" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"><option value="cm">cm</option><option value="px" selected>px</option><option value="mm">mm</option></select></div>
+          <div><label for="tune_dpi" class="block text-xs font-semibold text-slate-600 mb-1">DPI</label><input type="number" id="tune_dpi" min="36" max="1200" value="300" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"></div>
+          <div><label for="tune_minKb" class="block text-xs font-semibold text-slate-600 mb-1">Min KB</label><input type="number" id="tune_minKb" min="1" max="5000" value="20" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"></div>
+          <div><label for="tune_maxKb" class="block text-xs font-semibold text-slate-600 mb-1">Max KB</label><input type="number" id="tune_maxKb" min="1" max="5000" value="200" class="w-full p-2 border border-slate-300 rounded focus:ring-1 focus:ring-primary-500 text-sm"></div>
+        </div>
+      </div>
+
+      <!-- Tools Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Adjustments -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <h3 class="text-sm font-bold text-slate-800 mb-3">🎨 Adjustments & Quality</h3>
+          <div class="space-y-3">
+            <label class="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
+              <input type="checkbox" id="t1_deblur" checked class="w-4 h-4 text-primary-600 rounded">
+              <span>✨ Optional Edge Sharpening</span>
+            </label>
+            <div class="flex items-center gap-3">
+              <label for="t1_bright" class="text-xs font-semibold text-slate-600 w-16">Bright</label>
+              <input type="range" id="t1_bright" min="50" max="150" value="100" class="flex-1 h-1 bg-slate-300 rounded-lg appearance-none cursor-pointer">
+            </div>
+            <div class="flex items-center gap-3">
+              <label for="t1_contrast" class="text-xs font-semibold text-slate-600 w-16">Contrast</label>
+              <input type="range" id="t1_contrast" min="50" max="150" value="100" class="flex-1 h-1 bg-slate-300 rounded-lg appearance-none cursor-pointer">
+            </div>
+          </div>
+        </div>
+
+        <!-- Crop & Background -->
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-4">
+          <div>
+            <h3 class="text-sm font-bold text-slate-800 mb-2">✂️ Cropping Strategy</h3>
+            <select id="t1_cropMode" aria-label="Cropping strategy" class="w-full p-2 border border-slate-300 rounded-lg text-sm outline-none focus:border-primary-500">
+              <option value="fill">Crop & Fill (Passport Style, No Borders)</option>
+              <option value="fit">Fit Image (Maintain Full Image, Add Borders)</option>
+            </select>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-800 mb-2">🖼️ Background (If Fitting)</h3>
+            <div class="flex gap-2 text-sm">
+              <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+                <input type="radio" name="t1_bg" value="white" checked class="hidden"> ⚪ White
+              </label>
+              <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+                <input type="radio" name="t1_bg" value="black" class="hidden"> ⚫ Black
+              </label>
+              <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+                <input type="radio" name="t1_bg" value="original" class="hidden"> 🖼️ Keep
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Date Stamp Box (Hidden by default) -->
+      <div class="flex gap-3 hidden" id="t1_stampInputs">
+        <input type="text" id="t1_candName" aria-label="Candidate name" placeholder="Candidate Name (Optional)" class="flex-1 p-2.5 border border-slate-300 rounded-lg text-sm outline-none focus:border-primary-500">
+        <input type="date" id="t1_candDate" aria-label="Date of photo" class="flex-1 p-2.5 border border-slate-300 rounded-lg text-sm outline-none focus:border-primary-500">
+      </div>
+
+      <!-- Drag & Drop Zone -->
+      <div>
+        <div id="drop_t1" role="button" tabindex="0" aria-label="Choose a photo or signature" class="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center cursor-pointer bg-slate-50 hover:border-primary-500 hover:bg-primary-50 transition-all">
+          <div class="text-3xl mb-2">📁</div>
+          <span id="t1_dropText" class="text-sm font-semibold text-slate-600">Drag & Drop Image Here or Tap to Pick</span>
+          <input type="file" id="t1_file" accept="image/*" class="hidden">
+        </div>
+      </div>
+
+      <button id="t1_btn" disabled class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-xl shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors">Resize to Specs & Enhance</button>
+
+      <div id="t1_out" class="hidden mt-2 p-4 bg-green-50 border border-green-200 rounded-xl text-center">
+        <div id="t1_details" class="text-sm text-green-800 font-bold mb-3"></div>
+        <img id="t1_preview" alt="Processed image preview" class="max-h-64 mx-auto border border-slate-300 rounded shadow-sm mb-4 object-contain">
+        <button id="t1_dl" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-sm transition-colors">Download Final Image</button>
+        <div id="t1_sharePrompt" class="hidden mt-4 rounded-xl border border-emerald-200 bg-white p-4 text-left shadow-sm" aria-live="polite">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">🎉 Saved ₹50 Cyber Cafe Fee?</h3>
+              <p class="mt-1 text-sm text-slate-600">Help a friend filling this form by sharing this tool.</p>
+            </div>
+            <button type="button" class="share-prompt-dismiss shrink-0 rounded-lg p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-800" aria-label="Dismiss sharing prompt">✕</button>
+          </div>
+          <a class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 sm:w-auto" href="https://api.whatsapp.com/send?text=Bro%2C%20if%20you%20are%20applying%20for%20UPSC%20CSE%2FNDA%20forms%2C%20resize%20your%20photo%20%26%20signature%20to%20exact%2020KB-200KB%20easily%20here%3A%20https%3A%2F%2Fptanmay331-creator.github.io%2Fsarkaritools-image-suite%2Fupsc-photo-resizer.html" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.08 0C5.53 0 .19 5.33.19 11.9c0 2.1.55 4.16 1.6 5.98L.1 24l6.28-1.65a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.9-11.9a11.8 11.8 0 0 0-3.46-8.42ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.24-.38a9.87 9.87 0 0 1-1.52-5.27c0-5.48 4.45-9.93 9.92-9.93a9.87 9.87 0 0 1 7.03 2.92 9.87 9.87 0 0 1 2.9 7.03c0 5.48-4.45 9.93-9.95 9.93Zm5.45-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.71.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>
+            <span>Share on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: TARGET KB ==================== -->
+    <div id="tab-kb" role="tabpanel" aria-labelledby="tab-button-kb" class="tab-content space-y-5">
+      <div>
+        <label for="t2_targetKb" class="block text-sm font-bold text-slate-700 mb-1">Maximum File Size (KB)</label>
+        <input type="number" id="t2_targetKb" value="50" min="1" max="5000" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 outline-none">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <h3 class="text-sm font-bold text-slate-800 mb-2">Quality Settings</h3>
+          <label class="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
+            <input type="checkbox" id="t2_deblur" checked class="w-4 h-4 text-primary-600 rounded">
+            <span>✨ Optional Edge Sharpening</span>
+          </label>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+          <h3 class="text-sm font-bold text-slate-800 mb-2">Background</h3>
+          <div class="flex gap-2 text-sm">
+            <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+              <input type="radio" name="t2_bg" value="white" checked class="hidden"> ⚪ White
+            </label>
+            <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+              <input type="radio" name="t2_bg" value="black" class="hidden"> ⚫ Black
+            </label>
+            <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+              <input type="radio" name="t2_bg" value="original" class="hidden"> 🖼️ Keep
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="drop_t2" role="button" tabindex="0" aria-label="Choose an image to resize" class="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center cursor-pointer bg-slate-50 hover:border-primary-500 hover:bg-primary-50 transition-all">
+        <div class="text-3xl mb-2">📁</div>
+        <span id="t2_dropText" class="text-sm font-semibold text-slate-600">Drag & Drop Image Here</span>
+        <input type="file" id="t2_file" accept="image/*" class="hidden">
+      </div>
+
+      <button id="t2_btn" disabled class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-xl shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors">Resize Under Size Limit</button>
+
+      <div id="t2_out" class="hidden mt-2 p-4 bg-green-50 border border-green-200 rounded-xl text-center">
+        <div id="t2_details" class="text-sm text-green-800 font-bold mb-3"></div>
+        <img id="t2_preview" alt="Resized image preview" class="max-h-64 mx-auto border border-slate-300 rounded shadow-sm mb-4 object-contain">
+        <button id="t2_dl" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-sm transition-colors">Download Image</button>
+        <div id="t2_sharePrompt" class="hidden mt-4 rounded-xl border border-emerald-200 bg-white p-4 text-left shadow-sm" aria-live="polite">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">🎉 Saved ₹50 Cyber Cafe Fee?</h3>
+              <p class="mt-1 text-sm text-slate-600">Help a friend filling this form by sharing this tool.</p>
+            </div>
+            <button type="button" class="share-prompt-dismiss shrink-0 rounded-lg p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-800" aria-label="Dismiss sharing prompt">✕</button>
+          </div>
+          <a class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 sm:w-auto" href="https://api.whatsapp.com/send?text=Bro%2C%20if%20you%20are%20applying%20for%20UPSC%20CSE%2FNDA%20forms%2C%20resize%20your%20photo%20%26%20signature%20to%20exact%2020KB-200KB%20easily%20here%3A%20https%3A%2F%2Fptanmay331-creator.github.io%2Fsarkaritools-image-suite%2Fupsc-photo-resizer.html" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.08 0C5.53 0 .19 5.33.19 11.9c0 2.1.55 4.16 1.6 5.98L.1 24l6.28-1.65a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.9-11.9a11.8 11.8 0 0 0-3.46-8.42ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.24-.38a9.87 9.87 0 0 1-1.52-5.27c0-5.48 4.45-9.93 9.92-9.93a9.87 9.87 0 0 1 7.03 2.92 9.87 9.87 0 0 1 2.9 7.03c0 5.48-4.45 9.93-9.95 9.93Zm5.45-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.49-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.27.5 1.71.64.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z"/></svg>
+            <span>Share on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 3: CONVERT FORMAT ==================== -->
+    <div id="tab-convert" role="tabpanel" aria-labelledby="tab-button-convert" class="tab-content space-y-5">
+      <div>
+        <label for="t3_format" class="block text-sm font-bold text-slate-700 mb-1">Target Format</label>
+        <select id="t3_format" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 outline-none">
+          <option value="image/jpeg">JPG / JPEG (Standard for Portals)</option>
+          <option value="image/png">PNG (Lossless & Sharpest)</option>
+          <option value="image/webp">WEBP (Modern Compressed)</option>
+        </select>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h3 class="text-sm font-bold text-slate-800 mb-2">Background Setting</h3>
+        <div class="flex gap-2 text-sm">
+          <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+            <input type="radio" name="t3_bg" value="white" checked class="hidden"> ⚪ White
+          </label>
+          <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+            <input type="radio" name="t3_bg" value="black" class="hidden"> ⚫ Black
+          </label>
+          <label class="flex-1 text-center p-2 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-700 font-medium transition-all">
+            <input type="radio" name="t3_bg" value="original" class="hidden"> 🖼️ Keep
+          </label>
+        </div>
+      </div>
+
+      <div id="drop_t3" role="button" tabindex="0" aria-label="Choose an image to convert" class="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center cursor-pointer bg-slate-50 hover:border-primary-500 hover:bg-primary-50 transition-all">
+        <div class="text-3xl mb-2">📁</div>
+        <span id="t3_dropText" class="text-sm font-semibold text-slate-600">Drag & Drop Image Here</span>
+        <input type="file" id="t3_file" accept="image/*" class="hidden">
+      </div>
+
+      <button id="t3_btn" disabled class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-xl shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors">Convert Format Now</button>
+
+      <div id="t3_out" class="hidden mt-2 p-4 bg-green-50 border border-green-200 rounded-xl text-center">
+        <div id="t3_details" class="text-sm text-green-800 font-bold mb-3"></div>
+        <img id="t3_preview" alt="Converted image preview" class="max-h-64 mx-auto border border-slate-300 rounded shadow-sm mb-4 object-contain">
+        <button id="t3_dl" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-6 rounded-lg shadow-sm transition-colors">Download Converted Image</button>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: IMAGE TO PDF ==================== -->
+    <div id="tab-pdf" role="tabpanel" aria-labelledby="tab-button-pdf" class="tab-content space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="t4_pageSize" class="block text-sm font-bold text-slate-700 mb-1">Page Layout</label>
+          <select id="t4_pageSize" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 outline-none">
+            <option value="a4">Standard A4 (Centered with margins)</option>
+            <option value="fit">Fit to Image (Exact dims, no borders)</option>
+          </select>
+        </div>
+        <div>
+          <label for="t4_docName" class="block text-sm font-bold text-slate-700 mb-1">Document Name (Optional)</label>
+          <input type="text" id="t4_docName" placeholder="e.g. Aadhar_Card" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 outline-none">
+        </div>
+      </div>
+
+      <div id="drop_t4" role="button" tabindex="0" aria-label="Choose one or more images for a PDF" class="border-2 border-dashed border-slate-300 rounded-xl p-8 text-center cursor-pointer bg-slate-50 hover:border-primary-500 hover:bg-primary-50 transition-all">
+        <div class="text-3xl mb-2">📑</div>
+        <span id="t4_dropText" class="text-sm font-semibold text-slate-600">Drag & Drop Image(s) Here</span>
+        <input type="file" id="t4_file" accept="image/*" multiple class="hidden">
+      </div>
+
+      <button id="t4_btn" disabled class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-xl shadow-md disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors">Generate & Download PDF</button>
+
+      <div id="t4_out" class="hidden mt-2 p-4 bg-green-50 border border-green-200 rounded-xl text-center">
+        <div id="t4_details" class="text-sm text-green-800 font-bold"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Support Footer -->
+  <div class="bg-orange-50 border border-orange-200 rounded-xl p-5 text-center shadow-sm">
+    <p class="font-bold text-orange-900 text-base mb-1">Saved ₹50 cyber cafe fees? ☕ Support server costs with ₹5</p>
+    <p class="text-xs text-orange-700 mb-4">Your selected images are processed in your browser and are not uploaded.</p>
+    <a href="upi://pay?pa=ptanmay8400-7@oksbi&pn=tanmay&am=5&cu=INR&tn=server%20support" 
+       class="inline-block bg-orange-600 hover:bg-orange-700 text-white py-2 px-6 rounded-lg font-semibold text-sm transition-colors shadow-sm mb-4">
+      Pay ₹5 via UPI (GPay / PhonePe / Paytm)
+    </a>
+    <canvas id="support_qr" role="img" aria-label="QR code for a five rupee UPI payment" class="w-32 h-32 border-2 border-orange-300 rounded-xl bg-white p-1 inline-block"></canvas>
+    <p class="text-[11px] text-orange-800 mt-2 font-medium">UPI ID: <strong>ptanmay8400-7@oksbi</strong></p>
+  </div>
+</div>
+
+<script type="module">
+  import { jsPDF } from 'jspdf';
+  import QRCode from 'qrcode';
+
+  // Tab Switching Logic
+  const tabButtons = Array.from(document.querySelectorAll('.tab-btn'));
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      tabButtons.forEach(b => {
+        b.classList.remove('bg-white', 'shadow-sm', 'text-slate-900', 'active-tab-btn');
+        b.classList.add('text-slate-600');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      const target = e.currentTarget;
+      target.classList.add('bg-white', 'shadow-sm', 'text-slate-900', 'active-tab-btn');
+      target.classList.remove('text-slate-600');
+      target.setAttribute('aria-selected', 'true');
+      document.getElementById(`tab-${target.dataset.target}`).classList.add('active');
+    });
+  });
+  // Initialize first tab styles
+  document.querySelector('.active-tab-btn').classList.add('bg-white', 'shadow-sm', 'text-slate-900');
+  const requestedTool = new URLSearchParams(window.location.search).get('tool');
+  const initialTab = {
+    photo: 'sarkari',
+    signature: 'sarkari',
+    pdf: 'pdf'
+  }[requestedTool];
+  if (initialTab) {
+    tabButtons.find((button) => button.dataset.target === initialTab)?.click();
+  }
+
+  document.querySelector('[role="tablist"]').addEventListener('keydown', (event) => {
+    const currentIndex = tabButtons.indexOf(document.activeElement);
+    if (currentIndex < 0) return;
+    let nextIndex = currentIndex;
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabButtons.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = tabButtons.length - 1;
+    else return;
+    event.preventDefault();
+    tabButtons[nextIndex].focus();
+    tabButtons[nextIndex].click();
+  });
+
+  QRCode.toCanvas(document.getElementById('support_qr'), 'upi://pay?pa=ptanmay8400-7@oksbi&pn=tanmay&am=5&cu=INR&tn=server%20support', { width: 128, margin: 0 });
+
+  // Drag and Drop Engine
+  const MAX_FILE_BYTES = 20 * 1024 * 1024;
+  const MAX_IMAGE_PIXELS = 16000000;
+  const MAX_PDF_FILES = 20;
+  const MAX_PDF_BYTES = 80 * 1024 * 1024;
+  const MAX_PDF_PIXELS = 24000000;
+
+  function setAppStatus(message = '') {
+    const status = document.getElementById('app_status');
+    status.textContent = message;
+    status.classList.toggle('hidden', !message);
+  }
+
+  async function withProcessing(button, busyText, idleText, task) {
+    button.disabled = true;
+    button.textContent = busyText;
+    setAppStatus();
+    try {
+      await task();
+    } catch (error) {
+      console.error(error);
+      setAppStatus(error instanceof Error ? error.message : 'Processing failed. Please try another file.');
+    } finally {
+      button.disabled = false;
+      button.textContent = idleText;
+    }
+  }
+
+  function setPreview(previewId, blob) {
+    const preview = document.getElementById(previewId);
+    if (preview.dataset.objectUrl) URL.revokeObjectURL(preview.dataset.objectUrl);
+    const objectUrl = URL.createObjectURL(blob);
+    preview.dataset.objectUrl = objectUrl;
+    preview.src = objectUrl;
+  }
+
+  function setupDropZone(dropId, inputId, textId, callback) {
+    const dropZone = document.getElementById(dropId);
+    const input = document.getElementById(inputId);
+
+    dropZone.addEventListener('click', (event) => {
+      if (event.target !== input) input.click();
+    });
+    dropZone.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        input.click();
+      }
+    });
+    
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('border-primary-500', 'bg-primary-50');
+    });
+    
+    ['dragleave', 'drop'].forEach(evt => {
+      dropZone.addEventListener(evt, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-primary-500', 'bg-primary-50');
+      });
+    });
+    
+    dropZone.addEventListener('drop', (e) => {
+      if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+        input.files = e.dataTransfer.files;
+        input.dispatchEvent(new Event('change'));
+      }
+    });
+
+    input.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files.length > 0) {
+        const selectedFiles = Array.from(e.target.files);
+        const totalBytes = selectedFiles.reduce((total, file) => total + file.size, 0);
+        const maxFiles = input.multiple ? MAX_PDF_FILES : 1;
+        if (selectedFiles.length > maxFiles || selectedFiles.some(file => file.size > MAX_FILE_BYTES) || totalBytes > MAX_PDF_BYTES) {
+          input.value = '';
+          callback([]);
+          setAppStatus(`Choose up to ${maxFiles} image${maxFiles === 1 ? '' : 's'}, with each file under 20 MB and the total under 80 MB.`);
+          return;
+        }
+        setAppStatus();
+        if (selectedFiles.length === 1) {
+          const file = selectedFiles[0];
+          document.getElementById(textId).innerText = `Selected: ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
+        } else {
+          document.getElementById(textId).innerText = `Selected ${selectedFiles.length} Image(s)`;
+        }
+        callback(selectedFiles);
+      }
+    });
+  }
+
+  function loadImage(file) {
+    return new Promise((resolve, reject) => {
+      if (!file || (file.type && !file.type.startsWith('image/'))) {
+        reject(new Error('Choose a supported image file.'));
+        return;
+      }
+      if (file.size > MAX_FILE_BYTES) {
+        reject(new Error('Images must be 20 MB or smaller.'));
+        return;
+      }
+      const objectUrl = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        URL.revokeObjectURL(objectUrl);
+        if (img.width * img.height > MAX_IMAGE_PIXELS) {
+          reject(new Error('This image is too large to process safely. Choose an image under 12 megapixels.'));
+          return;
+        }
+        resolve(img);
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(objectUrl);
+        reject(new Error('This image could not be opened. Try another file.'));
+      };
+      img.src = objectUrl;
+    });
+  }
+
+  // Improved Downsampling (Only scales down if needed)
+  function drawSteppedDownsampled(sourceCanvas, targetWidth, targetHeight) {
+    let curCanvas = sourceCanvas;
+    let curW = sourceCanvas.width;
+    let curH = sourceCanvas.height;
+
+    if(curW <= targetWidth && curH <= targetHeight) return curCanvas;
+
+    while (curW * 0.5 > targetWidth && curH * 0.5 > targetHeight) {
+      curW = Math.round(curW * 0.5);
+      curH = Math.round(curH * 0.5);
+      const stepCanvas = document.createElement('canvas');
+      stepCanvas.width = curW; stepCanvas.height = curH;
+      const stepCtx = stepCanvas.getContext('2d');
+      stepCtx.imageSmoothingEnabled = true;
+      stepCtx.imageSmoothingQuality = 'high';
+      stepCtx.drawImage(curCanvas, 0, 0, curW, curH);
+      curCanvas = stepCanvas;
+    }
+    return curCanvas;
+  }
+
+  // Spatial De-blur & Sharpening
+  function applyDeBlurFilter(ctx, width, height, strength = 0.32) {
+    const imgData = ctx.getImageData(0, 0, width, height);
+    const src = new Uint8ClampedArray(imgData.data);
+    const dst = imgData.data;
+    const center = 1 + (4 * strength);
+    const edge = -strength;
+
+    for (let y = 1; y < height - 1; y++) {
+      const yOffset = y * width;
+      for (let x = 1; x < width - 1; x++) {
+        const idx = (yOffset + x) * 4;
+        for (let c = 0; c < 3; c++) {
+          const top = ((y - 1) * width + x) * 4 + c;
+          const bottom = ((y + 1) * width + x) * 4 + c;
+          const left = (yOffset + (x - 1)) * 4 + c;
+          const right = (yOffset + (x + 1)) * 4 + c;
+          dst[idx + c] = (src[idx + c] * center) + ((src[top] + src[bottom] + src[left] + src[right]) * edge);
+        }
+      }
+    }
+    ctx.putImageData(imgData, 0, 0);
+  }
+
+  function applyCanvasBackground(ctx, width, height, bgChoice, mimeType) {
+    if (bgChoice === 'white') {
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, width, height);
+    } else if (bgChoice === 'black') {
+      ctx.fillStyle = '#000000'; ctx.fillRect(0, 0, width, height);
+    } else if (mimeType === 'image/jpeg') {
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, 0, width, height);
+    } else {
+      ctx.clearRect(0, 0, width, height);
+    }
+  }
+
+  async function setJpegDpi(blob, dpi) {
+    const bytes = new Uint8Array(await blob.arrayBuffer());
+    let offset = 2;
+    while (offset + 4 < bytes.length && bytes[offset] === 0xFF) {
+      const marker = bytes[offset + 1];
+      if (marker === 0xDA || marker === 0xD9) break;
+      const segmentLength = (bytes[offset + 2] << 8) | bytes[offset + 3];
+      if (segmentLength < 2 || offset + 2 + segmentLength > bytes.length) break;
+      if (marker === 0xE0 && segmentLength >= 16 &&
+          bytes[offset + 4] === 0x4A && bytes[offset + 5] === 0x46 &&
+          bytes[offset + 6] === 0x49 && bytes[offset + 7] === 0x46 && bytes[offset + 8] === 0) {
+        const density = Math.min(65535, Math.round(dpi));
+        bytes[offset + 11] = 1;
+        bytes[offset + 12] = density >> 8;
+        bytes[offset + 13] = density & 0xFF;
+        bytes[offset + 14] = density >> 8;
+        bytes[offset + 15] = density & 0xFF;
+        return new Blob([bytes], { type: 'image/jpeg' });
+      }
+      offset += 2 + segmentLength;
+    }
+    return blob;
+  }
+
+  // ================= TAB 1: SARKARI RESIZER =================
+  const t1_input = document.getElementById('t1_instructions');
+  const t1_btn = document.getElementById('t1_btn');
+  let t1_current = null, t1_finalBlob = null, t1_needsDate = false;
+
+  const upscPresets = {
+    photo: { width: 350, height: 350, unit: 'px', minKb: 20, maxKb: 200, dpi: 300 },
+    signature: { width: 400, height: 200, unit: 'px', minKb: 20, maxKb: 100, dpi: 300 }
+  };
+
+  document.querySelectorAll('.upsc-preset').forEach(button => {
+    button.addEventListener('click', () => {
+      const preset = upscPresets[button.dataset.preset];
+      if (!preset) return;
+
+      document.getElementById('tune_width').value = preset.width;
+      document.getElementById('tune_height').value = preset.height;
+      document.getElementById('tune_unit').value = preset.unit;
+      document.getElementById('tune_minKb').value = preset.minKb;
+      document.getElementById('tune_maxKb').value = preset.maxKb;
+      document.getElementById('tune_dpi').value = preset.dpi;
+      document.getElementById('t3_format').value = 'image/jpeg';
+      document.querySelectorAll('.upsc-preset').forEach(presetButton => {
+        const selected = presetButton === button;
+        presetButton.setAttribute('aria-pressed', String(selected));
+        presetButton.classList.toggle('border-primary-500', selected);
+        presetButton.classList.toggle('bg-primary-50', selected);
+        presetButton.classList.toggle('text-primary-700', selected);
+        presetButton.classList.toggle('border-slate-300', !selected);
+        presetButton.classList.toggle('bg-white', !selected);
+        presetButton.classList.toggle('text-slate-700', !selected);
+      });
+      updateT1Tag();
+    });
+  });
+
+  {
+    const preset = upscPresets.photo;
+    document.getElementById('tune_width').value = preset.width;
+    document.getElementById('tune_height').value = preset.height;
+    document.getElementById('tune_unit').value = preset.unit;
+    document.getElementById('tune_minKb').value = preset.minKb;
+    document.getElementById('tune_maxKb').value = preset.maxKb;
+    document.getElementById('tune_dpi').value = preset.dpi;
+    document.getElementById('t3_format').value = 'image/jpeg';
+    updateT1Tag();
+  }
+
+  const today = new Date();
+  today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+  document.getElementById('t1_candDate').value = today.toISOString().split('T')[0];
+
+  t1_input.addEventListener('input', () => {
+    const text = t1_input.value.toLowerCase().trim();
+    const sizeRange = text.match(/(\d+)\s*(?:kb)?\s*(?:to|-|and)\s*(\d+)\s*kb/i);
+    const maxOnly = text.match(/(?:max|maximum|less than|under|below|not exceeding)\s*(\d+)\s*kb/i);
+    const singleKb = text.match(/(\d+)\s*kb/i);
+
+    if (sizeRange) {
+      document.getElementById('tune_minKb').value = parseInt(sizeRange[1]);
+      document.getElementById('tune_maxKb').value = parseInt(sizeRange[2]);
+    } else if (maxOnly) {
+      document.getElementById('tune_maxKb').value = parseInt(maxOnly[1]);
+      document.getElementById('tune_minKb').value = Math.max(5, Math.floor(parseInt(maxOnly[1]) * 0.6));
+    } else if (singleKb) {
+      const v = parseInt(singleKb[1]);
+      document.getElementById('tune_maxKb').value = v;
+      document.getElementById('tune_minKb').value = Math.max(5, Math.floor(v * 0.75));
+    }
+
+    const dpiMatch = text.match(/(\d{2,4})\s*dpi/i);
+    if (dpiMatch) document.getElementById('tune_dpi').value = parseInt(dpiMatch[1]);
+
+    const dimMatch = text.match(/(\d+(?:\.\d+)?)\s*(cm|mm|px|pixels?)?\s*(?:\([^\)]*\))?\s*(?:x|\*|by)\s*(\d+(?:\.\d+)?)\s*(cm|mm|px|pixels?)?/i);
+    if (dimMatch) {
+      document.getElementById('tune_width').value = dimMatch[1];
+      document.getElementById('tune_height').value = dimMatch[3];
+      const unit = (dimMatch[2] || dimMatch[4] || 'cm').toLowerCase();
+      document.getElementById('tune_unit').value = unit.includes('px') ? 'px' : (unit.includes('mm') ? 'mm' : 'cm');
+    }
+
+    if (text.includes('date on photo') || text.includes('date of photo') || text.includes('name and date')) {
+      t1_needsDate = true;
+      document.getElementById('t1_tagDate').classList.remove('hidden');
+      document.getElementById('t1_stampInputs').classList.remove('hidden');
+    } else {
+      t1_needsDate = false;
+      document.getElementById('t1_tagDate').classList.add('hidden');
+      document.getElementById('t1_stampInputs').classList.add('hidden');
+    }
+    updateT1Tag();
+  });
+
+  ['tune_width', 'tune_height', 'tune_unit', 'tune_dpi', 'tune_minKb', 'tune_maxKb'].forEach(id => {
+    document.getElementById(id).addEventListener('input', updateT1Tag);
+  });
+
+  function updateT1Tag() {
+    const w = document.getElementById('tune_width').value || '?';
+    const h = document.getElementById('tune_height').value || '?';
+    const u = document.getElementById('tune_unit').value;
+    const dpi = document.getElementById('tune_dpi').value || '?';
+    const minK = document.getElementById('tune_minKb').value;
+    const maxK = document.getElementById('tune_maxKb').value;
+    document.getElementById('t1_tagSummary').innerText = `Target: ${minK}–${maxK} KB | ${w} × ${h} ${u} (${dpi} DPI)`;
+  }
+
+  setupDropZone('drop_t1', 't1_file', 't1_dropText', (files) => {
+    t1_current = files[0] || null;
+    t1_btn.disabled = !t1_current;
+    document.getElementById('t1_out').classList.add('hidden');
+  });
+
+  async function processSarkari() {
+    await withProcessing(t1_btn, 'Processing...', 'Resize to Specs & Enhance', async () => {
+
+    const img = await loadImage(t1_current);
+    const bgChoice = document.querySelector('input[name="t1_bg"]:checked').value;
+    const cropMode = document.getElementById('t1_cropMode').value;
+    const wVal = Number(document.getElementById('tune_width').value);
+    const hVal = Number(document.getElementById('tune_height').value);
+    const unit = document.getElementById('tune_unit').value;
+    const dpi = Number(document.getElementById('tune_dpi').value);
+    if (!Number.isFinite(wVal) || !Number.isFinite(hVal) || !Number.isFinite(dpi) || wVal <= 0 || hVal <= 0 || dpi < 36 || dpi > 1200) {
+      throw new Error('Enter positive image dimensions and a resolution between 36 and 1200 DPI.');
+    }
+
+    let targetPxW, targetPxH;
+    if (unit === 'cm') { targetPxW = Math.round((wVal / 2.54) * dpi); targetPxH = Math.round((hVal / 2.54) * dpi); } 
+    else if (unit === 'mm') { targetPxW = Math.round((wVal / 25.4) * dpi); targetPxH = Math.round((hVal / 25.4) * dpi); } 
+    else { targetPxW = Math.round(wVal); targetPxH = Math.round(hVal); }
+    if (!targetPxW || !targetPxH || targetPxW * targetPxH > MAX_IMAGE_PIXELS) {
+      throw new Error('The requested output dimensions are too large. Reduce the dimensions or DPI.');
+    }
+
+    const steppedSource = drawSteppedDownsampled(img, targetPxW, targetPxH);
+
+    const canvas = document.createElement('canvas');
+    canvas.width = targetPxW; canvas.height = targetPxH;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+
+    applyCanvasBackground(ctx, targetPxW, targetPxH, bgChoice, 'image/jpeg');
+
+    // Hardware-accelerated Native Brightness/Contrast
+    const b = document.getElementById('t1_bright').value;
+    const c = document.getElementById('t1_contrast').value;
+    ctx.filter = `brightness(${b}%) contrast(${c}%)`;
+
+    // Crop or Fit Logic
+    let ratio;
+    if (cropMode === 'fill') {
+      ratio = Math.max(targetPxW / steppedSource.width, targetPxH / steppedSource.height);
+    } else {
+      ratio = Math.min(targetPxW / steppedSource.width, targetPxH / steppedSource.height);
+    }
+    
+    const drawW = steppedSource.width * ratio;
+    const drawH = steppedSource.height * ratio;
+    const shiftX = (targetPxW - drawW) / 2;
+    const shiftY = (targetPxH - drawH) / 2;
+    
+    ctx.drawImage(steppedSource, 0, 0, steppedSource.width, steppedSource.height, shiftX, shiftY, drawW, drawH);
+    ctx.filter = 'none'; // reset filter for text
+
+    if (document.getElementById('t1_deblur').checked) applyDeBlurFilter(ctx, targetPxW, targetPxH, 0.35);
+
+    if (t1_needsDate) {
+      const sh = Math.round(targetPxH * 0.18);
+      ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0, targetPxH - sh, targetPxW, sh);
+      ctx.fillStyle = '#000000'; ctx.textAlign = 'center';
+      const name = document.getElementById('t1_candName').value.trim();
+      const rawDate = document.getElementById('t1_candDate').value;
+      const d = rawDate ? rawDate.split('-').reverse().join('-') : '';
+      if (name) {
+        ctx.font = `bold ${Math.round(sh * 0.35)}px sans-serif`; 
+        ctx.fillText(name.toUpperCase(), targetPxW / 2, targetPxH - sh * 0.55);
+        ctx.font = `${Math.round(sh * 0.32)}px sans-serif`;
+        ctx.fillText(`DOP: ${d}`, targetPxW / 2, targetPxH - sh * 0.15);
+      } else {
+        ctx.font = `bold ${Math.round(sh * 0.45)}px sans-serif`;
+        ctx.fillText(`DOP: ${d}`, targetPxW / 2, targetPxH - sh * 0.35);
+      }
+    }
+
+    const minKb = Number(document.getElementById('tune_minKb').value);
+    const maxKb = Number(document.getElementById('tune_maxKb').value);
+    if (!Number.isFinite(minKb) || !Number.isFinite(maxKb) || minKb <= 0 || maxKb < minKb || maxKb > 5000) {
+      throw new Error('Enter a valid minimum and maximum file size, up to 5000 KB.');
+    }
+
+    const minBytes = minKb * 1024;
+    const maxBytes = maxKb * 1024;
+    t1_finalBlob = await binaryCompress(canvas, minBytes, maxBytes);
+    if (!t1_finalBlob || t1_finalBlob.size > maxBytes) {
+      throw new Error(`Cannot meet the ${maxKb} KB maximum at these dimensions. Increase the maximum or reduce the output dimensions.`);
+    }
+    t1_finalBlob = await setJpegDpi(t1_finalBlob, dpi);
+
+    const kb = (t1_finalBlob.size / 1024).toFixed(1);
+    setPreview('t1_preview', t1_finalBlob);
+    const rangeStatus = t1_finalBlob.size >= minBytes ? `Within ${minKb}–${maxKb} KB range` : `Below ${minKb} KB minimum; under ${maxKb} KB maximum`;
+    document.getElementById('t1_details').innerText = `✔ Output: ${kb} KB | ${rangeStatus} | ${targetPxW}×${targetPxH}px at ${dpi} DPI`;
+    document.getElementById('t1_out').classList.remove('hidden');
+
+    hideSharePrompt('t1_sharePrompt');
+    document.getElementById('t1_dl').onclick = () => downloadAndShowSharePrompt(t1_finalBlob, `sarkari_${targetPxW}x${targetPxH}.jpg`, 't1_sharePrompt');
+    });
+  }
+
+  // ================= TAB 2: TARGET KB =================
+  let t2_current = null, t2_finalBlob = null;
+  const t2_btn = document.getElementById('t2_btn');
+  setupDropZone('drop_t2', 't2_file', 't2_dropText', (files) => {
+    t2_current = files[0] || null;
+    t2_btn.disabled = !t2_current;
+    document.getElementById('t2_out').classList.add('hidden');
+  });
+
+  async function processExactKb() {
+    await withProcessing(t2_btn, 'Resizing...', 'Resize Under Size Limit', async () => {
+    const targetKb = Number(document.getElementById('t2_targetKb').value);
+    if (!Number.isFinite(targetKb) || targetKb < 1 || targetKb > 5000) {
+      throw new Error('Enter a maximum file size between 1 and 5000 KB.');
+    }
+    const targetBytes = targetKb * 1024;
+    const bgChoice = document.querySelector('input[name="t2_bg"]:checked').value;
+    const img = await loadImage(t2_current);
+
+    const doDeblur = document.getElementById('t2_deblur').checked;
+    let outputWidth = img.width;
+    let outputHeight = img.height;
+    let blob = null;
+
+    for (let attempt = 0; attempt < 12; attempt++) {
+      const canvas = document.createElement('canvas');
+      canvas.width = outputWidth; canvas.height = outputHeight;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) throw new Error('Your browser could not create an image canvas.');
+      ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+
+      applyCanvasBackground(ctx, canvas.width, canvas.height, bgChoice, 'image/jpeg');
+      ctx.drawImage(img, 0, 0, outputWidth, outputHeight);
+      if (doDeblur) applyDeBlurFilter(ctx, canvas.width, canvas.height, 0.30);
+
+      blob = await binaryCompress(canvas, 0, targetBytes);
+      if (blob && blob.size <= targetBytes) break;
+      outputWidth = Math.max(1, Math.floor(outputWidth * 0.82));
+      outputHeight = Math.max(1, Math.floor(outputHeight * 0.82));
+    }
+    if (!blob || blob.size > targetBytes) throw new Error(`Could not reduce this image below ${targetKb} KB. Try a higher limit.`);
+
+    t2_finalBlob = blob;
+    setPreview('t2_preview', t2_finalBlob);
+    document.getElementById('t2_details').innerText = `✔ Output: ${(blob.size/1024).toFixed(2)} KB (maximum ${targetKb} KB) · ${outputWidth} × ${outputHeight}px`;
+    document.getElementById('t2_out').classList.remove('hidden');
+    hideSharePrompt('t2_sharePrompt');
+    document.getElementById('t2_dl').onclick = () => downloadAndShowSharePrompt(t2_finalBlob, `target_size.jpg`, 't2_sharePrompt');
+    });
+  }
+
+  // ================= TAB 3: CONVERT =================
+  let t3_current = null, t3_finalBlob = null;
+  const t3_btn = document.getElementById('t3_btn');
+  setupDropZone('drop_t3', 't3_file', 't3_dropText', (files) => {
+    t3_current = files[0] || null;
+    t3_btn.disabled = !t3_current;
+    document.getElementById('t3_out').classList.add('hidden');
+  });
+
+  async function processConvert() {
+    await withProcessing(t3_btn, 'Converting...', 'Convert Format Now', async () => {
+    const mime = document.getElementById('t3_format').value;
+    const ext = mime.split('/')[1].replace('jpeg', 'jpg');
+    const bgChoice = document.querySelector('input[name="t3_bg"]:checked').value;
+    const img = await loadImage(t3_current);
+    const canvas = document.createElement('canvas');
+    canvas.width = img.width; canvas.height = img.height;
+    const ctx = canvas.getContext('2d');
+
+    applyCanvasBackground(ctx, canvas.width, canvas.height, bgChoice, mime);
+    ctx.drawImage(img, 0, 0);
+
+    t3_finalBlob = await new Promise(res => canvas.toBlob(res, mime, 0.92));
+    if (!t3_finalBlob || t3_finalBlob.type !== mime) throw new Error(`Your browser could not create ${ext.toUpperCase()} images.`);
+    setPreview('t3_preview', t3_finalBlob);
+    document.getElementById('t3_details').innerText = `✔ Converted to ${ext.toUpperCase()}: ${(t3_finalBlob.size/1024).toFixed(1)} KB`;
+    document.getElementById('t3_out').classList.remove('hidden');
+    document.getElementById('t3_dl').onclick = () => downloadBlob(t3_finalBlob, `converted.${ext}`);
+    });
+  }
+
+  // ================= TAB 4: PDF =================
+  let t4_filesList = [];
+  const t4_btn = document.getElementById('t4_btn');
+  setupDropZone('drop_t4', 't4_file', 't4_dropText', (files) => {
+    t4_filesList = Array.from(files);
+    t4_btn.disabled = t4_filesList.length === 0;
+    document.getElementById('t4_out').classList.add('hidden');
+  });
+
+  async function processPdf() {
+    await withProcessing(t4_btn, 'Creating PDF...', 'Generate & Download PDF', async () => {
+    if (!jsPDF) throw new Error('PDF support could not load. Check your connection and try again.');
+    const mode = document.getElementById('t4_pageSize').value;
+    let docName = document.getElementById('t4_docName').value.trim() || `document_${Date.now()}`;
+    docName = docName.replace(/[<>:"/\\|?*\u0000-\u001F]/g, '_').slice(0, 80);
+    if(!docName.toLowerCase().endsWith('.pdf')) docName += '.pdf';
+    let doc = null;
+    let totalPixels = 0;
+
+    for (let i = 0; i < t4_filesList.length; i++) {
+      const img = await loadImage(t4_filesList[i]);
+      totalPixels += img.width * img.height;
+      if (totalPixels > MAX_PDF_PIXELS) {
+        throw new Error('The selected PDF images are too large in total. Reduce the image count or resolution.');
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width; canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#FFFFFF';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0);
+      const imgData = canvas.toDataURL('image/jpeg', 0.90);
+
+      if (mode === 'fit') {
+        const orientation = img.width > img.height ? 'l' : 'p';
+        if (i === 0) doc = new jsPDF({ orientation, unit: 'px', format: [img.width, img.height] });
+        else doc.addPage([img.width, img.height], orientation);
+        doc.addImage(imgData, 'JPEG', 0, 0, img.width, img.height);
+      } else {
+        if (i === 0) doc = new jsPDF('p', 'mm', 'a4');
+        else doc.addPage('a4', 'p');
+        const availW = 190, availH = 277; // 210x297 minus 10mm margins
+        const ratio = Math.min(availW / img.width, availH / img.height);
+        const w = img.width * ratio, h = img.height * ratio;
+        doc.addImage(imgData, 'JPEG', (210 - w)/2, (297 - h)/2, w, h);
+      }
+    }
+    doc.save(docName);
+    document.getElementById('t4_details').innerText = `✔ PDF '${docName}' generated successfully!`;
+    document.getElementById('t4_out').classList.remove('hidden');
+    });
+  }
+
+  // ================= Compression Engine =================
+  async function binaryCompress(canvas, minBytes, maxBytes) {
+    let low = 0.05, high = 0.98, bestBlob = null, bestUnderMax = null;
+    let bestQuality = -1;
+    const encode = (quality) => new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+    const lowestQualityBlob = await encode(low);
+    if (!lowestQualityBlob) return null;
+    if (lowestQualityBlob.size <= maxBytes) {
+      bestUnderMax = lowestQualityBlob;
+      bestQuality = low;
+      if (lowestQualityBlob.size >= minBytes) bestBlob = lowestQualityBlob;
+    }
+
+    for (let i = 0; i < 12; i++) {
+      const mid = (low + high) / 2;
+      const blob = await encode(mid);
+      if (!blob) return null;
+      if (blob.size <= maxBytes) {
+        low = mid;
+        if (mid > bestQuality) {
+          bestUnderMax = blob;
+          bestQuality = mid;
+        }
+        if (blob.size >= minBytes) bestBlob = blob;
+      } else {
+        high = mid;
+      }
+    }
+    return bestBlob || bestUnderMax;
+  }
+
+  function downloadBlob(blob, filename) {
+    const a = document.createElement('a');
+    const objectUrl = URL.createObjectURL(blob);
+    a.href = objectUrl; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+  }
+
+  function downloadAndShowSharePrompt(blob, filename, promptId) {
+    downloadBlob(blob, filename);
+    document.getElementById(promptId).classList.remove('hidden');
+  }
+
+  function hideSharePrompt(promptId) {
+    document.getElementById(promptId).classList.add('hidden');
+  }
+
+  document.querySelectorAll('.share-prompt-dismiss').forEach(button => {
+    button.addEventListener('click', () => button.closest('[id$="_sharePrompt"]').classList.add('hidden'));
+  });
+
+  document.getElementById('t1_btn').addEventListener('click', processSarkari);
+  document.getElementById('t2_btn').addEventListener('click', processExactKb);
+  document.getElementById('t3_btn').addEventListener('click', processConvert);
+  document.getElementById('t4_btn').addEventListener('click', processPdf);
+</script>
+
+</body>
+</html>

@@ -21,7 +21,7 @@ npm run build
 npm run preview
 ```
 
-The production build creates four static pages in `dist/`: the main tool and dedicated passport-photo, signature-image, and image-to-PDF guides. The repository includes a GitHub Actions workflow to build and deploy `dist/` to GitHub Pages:
+The production build creates seven static pages in `dist/`: the main tool, dedicated SSC, UPSC, and IBPS resizers, and passport-photo, signature-image, and image-to-PDF guides. The repository includes a GitHub Actions workflow to build and deploy `dist/` to GitHub Pages:
 
 1. Push this project to a public GitHub repository.
 2. In the repository, open **Settings → Pages** and set the build/deployment source to **GitHub Actions**.

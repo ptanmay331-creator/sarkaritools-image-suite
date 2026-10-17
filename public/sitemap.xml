@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/ssc-photo-resizer.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/passport-photo.html</loc>
+    <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/upsc-photo-resizer.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/signature-resizer.html</loc>
-  </url>
-  <url>
-    <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/image-to-pdf.html</loc>
+    <loc>https://ptanmay331-creator.github.io/sarkaritools-image-suite/ibps-photo-resizer.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>
