@@ -56,6 +56,14 @@
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex justify-center p-4 sm:p-8">
 
 <div class="max-w-3xl w-full flex flex-col gap-6">
+  <nav aria-label="Exam resizer pages" class="sticky top-2 z-50 -mx-2 rounded-xl border border-slate-700 bg-slate-900/95 p-2 shadow-lg backdrop-blur sm:mx-0">
+    <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center">
+      <a href="./index.html" class="rounded-lg px-2 py-2 text-center text-xs font-semibold leading-tight text-slate-100 hover:bg-slate-800 sm:px-3 sm:text-sm">🏠 All Tools</a>
+      <a href="./ssc-photo-resizer.html" class="rounded-lg px-2 py-2 text-center text-xs font-semibold leading-tight text-slate-100 hover:bg-slate-800 sm:px-3 sm:text-sm">⚡ SSC Resizer (20-50KB)</a>
+      <a href="./upsc-photo-resizer.html" aria-current="page" class="rounded-lg bg-sky-400 px-2 py-2 text-center text-xs font-bold leading-tight text-slate-950 sm:px-3 sm:text-sm">🏛️ UPSC Resizer (20-300KB)</a>
+      <a href="./ibps-photo-resizer.html" class="rounded-lg px-2 py-2 text-center text-xs font-semibold leading-tight text-slate-100 hover:bg-slate-800 sm:px-3 sm:text-sm">🏦 IBPS / Banking Resizer</a>
+    </div>
+  </nav>
   
   <!-- Header -->
   <header class="text-center">
@@ -361,6 +369,17 @@
   </div>
 </div>
 
+<section id="downloadShareToast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-3 left-3 right-3 z-[100] mx-auto max-w-lg translate-y-4 rounded-2xl border border-slate-700 bg-slate-900 p-4 text-slate-100 opacity-0 shadow-2xl transition-all duration-300 sm:bottom-5 sm:left-auto sm:right-5 sm:mx-0">
+  <div class="flex items-start justify-between gap-3">
+    <div>
+      <h2 class="font-bold">✅ Downloaded successfully!</h2>
+      <p class="mt-1 text-sm text-slate-300">Saved cyber cafe fees? Share with friends filling this form:</p>
+    </div>
+    <button id="downloadShareDismiss" type="button" class="rounded-md px-2 py-1 text-lg leading-none text-slate-300 hover:bg-slate-800 hover:text-white" aria-label="Dismiss share message">✕</button>
+  </div>
+  <a class="mt-3 inline-flex w-full items-center justify-center rounded-xl bg-green-600 px-4 py-3 text-sm font-bold text-white shadow-sm transition-colors hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-400" href="https://api.whatsapp.com/send?text=Bro%2C%20if%20you%20are%20filling%20exam%20forms%2C%20use%20this%20free%20tool%20to%20resize%20Photo%20%26%20Signature%20to%20exact%2020KB-50KB%20directly%20on%20your%20phone%3A%20https%3A%2F%2Fptanmay331-creator.github.io%2Fsarkaritools-image-suite%2F" target="_blank" rel="noopener noreferrer">📲 Share Tool on WhatsApp</a>
+</section>
+
 <script type="module">
   import { jsPDF } from 'jspdf';
   import QRCode from 'qrcode';
@@ -450,6 +469,31 @@
   function setupDropZone(dropId, inputId, textId, callback) {
     const dropZone = document.getElementById(dropId);
     const input = document.getElementById(inputId);
+
+    if (!input.multiple) {
+      const cameraInput = document.createElement('input');
+      cameraInput.type = 'file';
+      cameraInput.accept = 'image/*';
+      cameraInput.capture = 'environment';
+      cameraInput.id = `cameraInput_${inputId}`;
+      cameraInput.className = 'hidden';
+
+      const cameraButton = document.createElement('button');
+      cameraButton.type = 'button';
+      cameraButton.textContent = '📷 Click Photo / Signature with Camera';
+      cameraButton.className = 'mt-3 w-full rounded-xl border border-sky-300 bg-slate-900 px-4 py-3 text-sm font-semibold text-sky-300 shadow-sm transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400';
+      dropZone.insertAdjacentElement('afterend', cameraButton);
+      cameraButton.insertAdjacentElement('afterend', cameraInput);
+
+      cameraButton.addEventListener('click', () => cameraInput.click());
+      cameraInput.addEventListener('change', () => {
+        if (!cameraInput.files || cameraInput.files.length === 0) return;
+        input.value = '';
+        input.files = cameraInput.files;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+        cameraInput.value = '';
+      });
+    }
 
     dropZone.addEventListener('click', (event) => {
       if (event.target !== input) input.click();
@@ -818,8 +862,7 @@
     document.getElementById('t1_details').innerText = `✔ Output: ${kb} KB | ${rangeStatus} | ${targetPxW}×${targetPxH}px at ${dpi} DPI`;
     document.getElementById('t1_out').classList.remove('hidden');
 
-    hideSharePrompt('t1_sharePrompt');
-    document.getElementById('t1_dl').onclick = () => downloadAndShowSharePrompt(t1_finalBlob, `sarkari_${targetPxW}x${targetPxH}.jpg`, 't1_sharePrompt');
+    document.getElementById('t1_dl').onclick = () => downloadBlob(t1_finalBlob, `sarkari_${targetPxW}x${targetPxH}.jpg`);
     });
   }
 
@@ -869,8 +912,7 @@
     setPreview('t2_preview', t2_finalBlob);
     document.getElementById('t2_details').innerText = `✔ Output: ${(blob.size/1024).toFixed(2)} KB (maximum ${targetKb} KB) · ${outputWidth} × ${outputHeight}px`;
     document.getElementById('t2_out').classList.remove('hidden');
-    hideSharePrompt('t2_sharePrompt');
-    document.getElementById('t2_dl').onclick = () => downloadAndShowSharePrompt(t2_finalBlob, `target_size.jpg`, 't2_sharePrompt');
+    document.getElementById('t2_dl').onclick = () => downloadBlob(t2_finalBlob, `target_size.jpg`);
     });
   }
 
@@ -997,20 +1039,27 @@
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+    showDownloadToast();
   }
 
-  function downloadAndShowSharePrompt(blob, filename, promptId) {
-    downloadBlob(blob, filename);
-    document.getElementById(promptId).classList.remove('hidden');
+  let downloadToastTimer;
+
+  function showDownloadToast() {
+    const toast = document.getElementById('downloadShareToast');
+    clearTimeout(downloadToastTimer);
+    toast.classList.remove('translate-y-4', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    downloadToastTimer = setTimeout(hideDownloadToast, 10000);
   }
 
-  function hideSharePrompt(promptId) {
-    document.getElementById(promptId).classList.add('hidden');
+  function hideDownloadToast() {
+    const toast = document.getElementById('downloadShareToast');
+    toast.classList.add('translate-y-4', 'opacity-0', 'pointer-events-none');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+    clearTimeout(downloadToastTimer);
   }
 
-  document.querySelectorAll('.share-prompt-dismiss').forEach(button => {
-    button.addEventListener('click', () => button.closest('[id$="_sharePrompt"]').classList.add('hidden'));
-  });
+  document.getElementById('downloadShareDismiss').addEventListener('click', hideDownloadToast);
 
   document.getElementById('t1_btn').addEventListener('click', processSarkari);
   document.getElementById('t2_btn').addEventListener('click', processExactKb);

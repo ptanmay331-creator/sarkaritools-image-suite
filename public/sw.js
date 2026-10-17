@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sarkaritools-shell-v1';
+const CACHE_NAME = 'sarkaritools-shell-v2';
 const APP_SCOPE = self.registration.scope;
 const HOME_URL = new URL('index.html', APP_SCOPE).href;
 
