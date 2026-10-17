@@ -9,6 +9,7 @@ export default defineConfig({
         sscPhotoResizer: 'ssc-photo-resizer.html',
         upscPhotoResizer: 'upsc-photo-resizer.html',
         ibpsPhotoResizer: 'ibps-photo-resizer.html',
+        railwayPhotoResizer: 'railway-photo-resizer.html',
         passportPhoto: 'passport-photo.html',
         signatureResizer: 'signature-resizer.html',
         imageToPdf: 'image-to-pdf.html'
